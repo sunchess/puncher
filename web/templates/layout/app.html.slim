@@ -6,7 +6,7 @@ html lang="en"
     meta content="width=device-width, initial-scale=1" name="viewport"
     meta content="" name="description"
     meta content="" name="author"
-    title Hello ApplicationName!
+    title Pancher
     link rel="stylesheet" href="#{static_path(@conn, "/css/app.css")}"
 
   body
@@ -15,7 +15,8 @@ html lang="en"
         nav role="navigation"
           ul.nav.nav-pills.pull-right
             li
-              a href="http://www.phoenixframework.org/docs" Get Started
+              = link "Register", to: registration_path(@conn, :new)
+              /a href="http://www.phoenixframework.org/docs" Get Started
         span.logo
 
       p.alert.alert-info role="alert"= get_flash(@conn, :info)

@@ -23,5 +23,7 @@ defmodule Pancher.User do
     model
     |> cast(params, @required_fields, @optional_fields)
     |> unique_constraint(:email)
+    |> validate_format(:email, ~r/@/)
+    |> validate_length(:password, min: 5)
   end
 end
